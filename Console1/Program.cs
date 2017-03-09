@@ -8,20 +8,21 @@ namespace Console1
 {
     class Program
     {
-        static int Main(string[] args)
+        static void Main(string[] args)
         {
             Console.WriteLine("******Abra kadabra******");
             Console.WriteLine("Privet MIR");
             Console.WriteLine();
 
-            // GetUserData();
-            // MessBox();
+            // GetUserData();           // В этом методе програма использует данные введеные пользователем
+            // MessBox();               // В этом методе открывается отдельное окно с надписью
+            // TipesNew ();             // Метод в котором создаются типы переменних с помощю оператора "NEW"
 
             Console.WriteLine();
 
             Console.ReadLine();
 
-            return -1;
+            
         }
         static void GetUserData()
         {
@@ -42,8 +43,20 @@ namespace Console1
         }
         static void MessBox()
         {
-            string userMessage = string.Format("100000 in hex is {0} ", 1000);
+            string userMessage = string.Format("В этом методе открывается окно с этой надписью");
             System.Windows.MessageBox.Show(userMessage);
+        }
+        static void TipesNew ()
+        {
+            Console.WriteLine("Метод в котором создаются типы переменних с помощю оператора \"NEW\" ");
+            bool b = new bool();
+            int i = new int();
+            float f = new float();
+            char ch = new char();
+            DateTime DT = new DateTime();
+            Console.WriteLine("b = {0} \ni = {1} \nf = {2} \nch = {3} \nDT = {4}",b,i,f,ch,DT);
+
+
         }
     }
 }
