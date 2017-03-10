@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Numerics;
 
 namespace Console1
 {
@@ -10,14 +11,17 @@ namespace Console1
     {
         static void Main(string[] args)
         {
+            
             Console.WriteLine("******Abra kadabra******");
             Console.WriteLine("Privet MIR");
             Console.WriteLine();
 
             // GetUserData();           // В этом методе програма использует данные введеные пользователем
             // MessBox();               // В этом методе открывается отдельное окно с надписью
-            // TipesNew ();             // Метод в котором создаются типы переменних с помощю оператора "NEW"
-
+            // TipesNew ();             // Метод в котором создаются типы переменних с помощю оператора "NEW"  со стандартным значением
+            // TimeAndWatch();          // Операторы времени
+            // StringMutki();           // Методы работы с текстом
+            experement();
             Console.WriteLine();
 
             Console.ReadLine();
@@ -58,5 +62,50 @@ namespace Console1
 
 
         }
+        static void TimeAndWatch()
+        {
+            Console.WriteLine("Операторы времени");
+            DateTime vvv = new DateTime(0003, 02, 01, 04, 05, 06); // принимает (год,месяц,число и время)
+            Console.WriteLine( vvv);
+            Console.WriteLine();
+            DateTime dt = new DateTime(2017,03,09); // принимает (год,месяц,число)
+            TimeSpan ts = new TimeSpan(22, 36, 49); // принимает (время)
+            DateTime tyt = dt + ts;
+            Console.WriteLine("Дата написания этих строчек {0}. \nДень недели - {1}", tyt, dt.DayOfWeek);
+            
+
+            
+            
+        }
+        static void StringMutki()
+        {
+            Console.Write("Введи свое имя жалкий смерд: \a");  //  \a - звуковой сигнал
+            string _myName = Console.ReadLine();
+            Console.WriteLine("И так {0}, вот что я тебе скажу ", _myName);
+            Console.WriteLine("В твоем жалком имени {0} букв ", _myName.Length);
+            Console.WriteLine("Если имя прокричать, то будет {0} ", _myName.ToUpper());
+            Console.WriteLine("А если прошептать - {0} ! ", _myName.ToLower());
+            Console.Write("Че зыриш? введи одну букву, а я посмотрю есть ли она в твоем именни: ");
+            Vvod:
+            Console.Write("\a");                                //  \a - звуковой сигнал
+            string n = Console.ReadLine();
+            if (_myName.Contains(n) == true)            //_myName.Contains(n) -етот метод проверяет есть ли в _myName указаная буква(ы)
+            {
+                Console.WriteLine("Да, есть такая буква!");
+            }
+            else 
+            {
+                Console.Write("Обломись! Введи правильную букву: ");
+                goto Vvod;
+ 
+            }
+            Console.WriteLine(_myName.Replace("q","n"));            //меняет все буквы "q" на "n"
+            
+        }
+        static void experement()
+        {
+            
+        }
+
     }
 }
